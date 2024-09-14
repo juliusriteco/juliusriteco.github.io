@@ -10,13 +10,15 @@
 }  
 
 .containermenu{
+    margin: 0% auto;
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px;
-    column-width: 100%;
-    column-gap: 10%;
-    max-width: 1200px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    row-gap: 25px;
+    width: 100vw;
+    max-width: 1400px;
 }
 
 body {
@@ -39,11 +41,8 @@ body {
     display: flex;
     align-items: stretch;
     gap: 10px;
-    max-width: 1200px;
 }
-.container2{
-    max-width: 1200px;
-}
+
 
 
 .flex{
@@ -52,7 +51,7 @@ body {
 
 /* Styling voor koppen */
 h1, h2, h3 {
-    color: #2c3e50;
+    color: #192129;
     text-align: left;
 }
 
@@ -94,9 +93,5 @@ footer {
         width: 100%;
         display: flex;
         justify-content: center;
-    }
-
-    h1{
-        font-size: 1.5rem;
     }
   }
