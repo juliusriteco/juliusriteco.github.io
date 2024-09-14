@@ -6,7 +6,7 @@
 .mainclass{
     width: 80%;
     margin: 0% auto;
-    max-width: 1400px;
+    max-width: 1200px;
 }  
 
 .containermenu{
@@ -18,7 +18,7 @@
     margin-bottom: 10px;
     row-gap: 25px;
     width: 100vw;
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 body {
