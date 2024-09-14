@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    justify-content: left;
+    justify-content: space-around;
     gap: 10px;
 }
 .container1{
@@ -67,7 +67,8 @@ section {
 
 /* Styling voor projecten */
 .project {
-    width:325px;
+    min-width:250px;
+    max-width:400px;
     margin: 10px 0;
     padding: 15px;
     border: 1px solid #ccc;
