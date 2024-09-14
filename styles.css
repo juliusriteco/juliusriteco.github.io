@@ -96,6 +96,7 @@ footer {
         justify-content: center;
     }
     .containermenu{
+        flex-direction: column;
         margin: 30px;
         column-width: 90%;
         column-gap: 5%; 
