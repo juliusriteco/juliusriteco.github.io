@@ -95,12 +95,7 @@ footer {
         display: flex;
         justify-content: center;
     }
-    .containermenu{
-        flex-direction: column;
-        margin: 30px;
-        column-width: 90%;
-        column-gap: 5%; 
-    }
+
     h1{
         font-size: 1.5rem;
     }
