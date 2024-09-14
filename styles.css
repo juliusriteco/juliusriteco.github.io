@@ -17,6 +17,7 @@
     column-width: 100%;
     column-gap: 10%;
     max-width: 1200px;
+    background-color: peru;
 }
 
 body {
