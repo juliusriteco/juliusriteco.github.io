@@ -1,0 +1,15 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <!-- templates/product_detail.html -->
+    <title> create product </title>
+    <h1> Add a product </h1>
+    
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ NewProductForm.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+    
+
+{% endblock %}

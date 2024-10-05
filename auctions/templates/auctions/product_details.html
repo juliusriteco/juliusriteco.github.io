@@ -1,0 +1,51 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <!-- templates/product_detail.html -->
+    <title>{{ productDetails.name }}</title>
+    <h1>{{ productDetails.name }}</h1>
+    <img src="{{ productDetails.image.url }}" alt="{{ productDetails.name }}" style="width:300px;height:300px;"> <br>
+    <p><b>Description:</b> {{ productDetails.description }}</p>
+    {% if productDetails.highest_bid.bid %} 
+            <p><b>Highest:</b> € {{productDetails.highest_bid.bid}}</p>
+        {% else %}
+        <p></p><b>Highest:</b> no bid yet.</p>
+        {% endif %}
+    <p><b>Category:</b> {{ productDetails.category }}</p>
+
+
+    {% if productDetails.isActive%}
+    <form action="{% url 'New_bid' productDetails.id %}" method="post">
+        {% csrf_token %}
+        {{ BiddingForm.as_p }}
+        <input type="submit" value="Submit">
+    </form>        
+    {% else %}
+    <b>Buyer:</b> {{productDetails.highest_bid.bidder}}
+    <h3> Product is sold </h3>
+    {% endif %}
+    {% if message %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+    {% endif %}
+
+<form action="{% url 'toggle_watchlist' productDetails.id %}" method="post">
+    {% csrf_token %}
+    {% if productDetails in user.watchlist.all %}
+        <input type="submit" value="Remove from Watchlist">
+    {% else %}
+        <input type="submit" value="Add to Watchlist">
+    {% endif %}
+</form>
+
+<form action="{% url 'disable' productDetails.id %}" method="post">
+    {% csrf_token %}
+        <input type="submit" value="disable">
+    
+</form>
+
+
+    
+
+{% endblock %}

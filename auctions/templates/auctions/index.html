@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    {% for product in products %}
+        {% if product.isActive %}
+            <br>
+            <a class="nav-link" href="{% url 'product_details' product.id %}">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" style="width:148px;height:148px;">
+                {% else %}
+                    <p>Geen afbeelding beschikbaar</p>
+                {% endif %}
+            </a>
+
+            <br>
+            <b>Name:</b> {{product.name}} <br>
+            <b>Category: </b> {{product.category}} <br>
+            {% if product.highest_bid.bid %} 
+                <b>Highest:</b> € {{product.highest_bid.bid}}<br> <br>
+            {% else %}
+            <b>Highest:</b> no bid yet.
+            {% endif %}
+        {% else %}
+            <br>
+            <a class="nav-link" href="{% url 'product_details' product.id %}">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" style="width:148px;height:148px;">
+                {% else %}
+                    <p>Geen afbeelding beschikbaar</p>
+                {% endif %}
+            </a>
+            <br>
+            <p><b>product is sold</b></p>
+            <b>Name:</b> {{product.name}} <br>
+            <b>Category: </b> {{product.category}} <br>
+            {% if product.highest_bid.bid %} 
+                <b>Highest:</b> € {{product.highest_bid.bid}}<br> <br>
+            {% else %}
+            <b>Highest:</b> no bid yet.
+            {% endif %}
+            
+        {% endif %}
+    {% endfor %}
+{% endblock %}
